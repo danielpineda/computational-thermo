@@ -6,13 +6,9 @@ project:
     - name: Kyle Niemeyer
       email: kyle.niemeyer@oregonstate.edu
   copyright: '2025'
+  date: '2025'
   github: kyleniemeyer/computational-thermo
-  thebe:
-    binder:
-      repo: kyleniemeyer/computational-thermo
-      provider: github
-      url: https://mybinder.org
-      ref: main
+  jupyter: true
   bibliography:
     - references.bib
   settings:

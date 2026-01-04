@@ -13,7 +13,7 @@ to navigate this page!
 
 ## Joining the conversation
 
-`computational-thermo` is a  new project created by Kyle Niemeyer, for teaching thermodynamics using Python and related open-source software packages. 
+`computational-thermo` is a project created by Kyle Niemeyer, for teaching thermodynamics using Python and related open-source software packages. 
 
 Since this project currently involves a single primary contributor, there may not be many—or any—public conversations about the project. However, suggestions, contributions, and/or comments are welcome via [issues][link_issues].
 
@@ -82,13 +82,13 @@ We appreciate all contributions to `computational-thermo`, but those accepted fa
 
 **1. Comment on an existing issue or open a new issue referencing your addition.**
 
-This allows other members of the jupyter-book development team to confirm that you aren't overlapping with work that's currently underway and that everyone is on the same page with the goal of the work you're going to carry out.
+This allows other members of the computational-thermo development team to confirm that you aren't overlapping with work that's currently underway and that everyone is on the same page with the goal of the work you're going to carry out.
 
 [This blog][link_pushpullblog] is a nice explanation of why putting this work in up front is so useful to everyone involved.
 
-**2. [Fork][link_fork] the [jupyter-book repository][link_jupyter-book] to your profile.**
+**2. [Fork][link_fork] the [computational-thermo repository][link_jupyter-book] to your profile.**
 
-This is now your own unique copy of jupyter-book.
+This is now your own unique copy of `computational-thermo`.
 Changes here won't effect anyone else's work, so it's a safe space to explore edits to the code!
 
 Make sure to [keep your fork up to date][link_updateupstreamwiki] with the master repository.
@@ -146,7 +146,7 @@ You're awesome.
 
 [link_git]: https://git-scm.com
 [link_github]: https://github.com/
-[link_jupyter-book]: https://github.com/jupyter/jupyter-book
+[link_jupyter-book]: https://github.com/kyleniemeyer/computational-thermo
 [link_signupinstructions]: https://help.github.com/articles/signing-up-for-a-new-github-account
 
 [writing_formatting_github]: https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github
@@ -157,7 +157,7 @@ You're awesome.
 [readthedocs]: https://docs.readthedocs.io/en/latest/index.html
 
 [link_issues]: https://github.com/kyleniemeyer/computational-thermo/issues
-[link_coc]: https://github.com/kyleniemeyer/computational-thermo/blob/master/CODE_OF_CONDUCT.md
+[link_coc]: https://github.com/kyleniemeyer/computational-thermo/blob/main/CODE_OF_CONDUCT.md
 
 [link_labels]: https://github.com/kyleniemeyer/computational-thermo/labels
 [link_bugs]: https://github.com/kyleniemeyer/computational-thermo/labels/bug

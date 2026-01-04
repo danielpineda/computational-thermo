@@ -1,0 +1,81 @@
+version: 1
+project:
+  title: Computational Thermodynamics
+  description: Online textbook for graduate thermodynamics
+  authors:
+    - name: Kyle Niemeyer
+      email: kyle.niemeyer@oregonstate.edu
+  copyright: '2025'
+  github: kyleniemeyer/computational-thermo
+  thebe:
+    binder:
+      repo: kyleniemeyer/computational-thermo
+      provider: github
+      url: https://mybinder.org
+      ref: main
+  bibliography:
+    - references.bib
+  settings:
+    output_matplotlib_strings: remove
+    output_stderr: remove-warn
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: content/intro.md
+    - file: content/getting-started.md
+      children:
+        - file: content/setting-up-environment.md
+        - file: content/intro-solving-problems.ipynb
+        - file: content/intro-using-coolprop.ipynb
+        - file: content/using-scipy.ipynb
+    - file: content/first-law/first-law.md
+      children:
+        - file: content/first-law/steam-water-equilibrium.ipynb
+        - file: content/first-law/portable-cooling-system.ipynb
+        - file: content/first-law/hydrogen-storage-tanks.ipynb
+        - file: content/first-law/air-tank.ipynb
+    - file: content/second-law/second-law.ipynb
+      children:
+      - file: content/second-law/vortex-tube.ipynb
+      - file: content/second-law/heating-water.ipynb
+      - file: content/second-law/turbine-efficiency.ipynb
+      - file: content/second-law/solar-powered-pump.ipynb
+    - file: content/exergy/exergy.ipynb
+      children:
+      - file: content/exergy/second-law-efficiency.ipynb
+    - file: content/properties-pure/properties-pure.ipynb
+      children:
+      - file: content/properties-pure/reduced-helmholtz.ipynb
+    - file: content/mixtures/mixtures.ipynb
+      children:
+      - file: content/mixtures/multicomponent-phase-equilibrium.ipynb
+    - file: content/combustion/combustion.ipynb
+      children:
+      - file: content/combustion/adiabatic-flame-temperature.ipynb
+      - file: content/combustion/heating-values.ipynb
+      - file: content/combustion/furnace-efficiency.ipynb
+    - file: content/chemical-equilibrium/chemical-equilibrium.md
+      children:
+      - file: content/chemical-equilibrium/equilibrium-constant.ipynb
+      - file: content/chemical-equilibrium/equilibrium-alternative-methods.ipynb
+      - file: content/chemical-equilibrium/adiabatic-flame-temperature.ipynb
+      - file: content/chemical-equilibrium/combustion-acetylene.ipynb
+    - file: content/stat-thermo/stat-thermo.md
+      children:
+      - file: content/stat-thermo/monatomic-gas.ipynb
+      - file: content/stat-thermo/diatomic-gases.ipynb
+site:
+  title: Computational Thermodynamics
+  template: book-theme
+  actions:
+    - title: Support me
+      url: https://buymeacoffee.com/kyleniemeyer
+    - title: Suggestion box
+      url: https://github.com/kyleniemeyer/computational-thermo/issues/new/choose
+  options:
+    logo: images/logo/logo.png
+    favicon: images/logo/favicon.ico
+    folders: true
+    

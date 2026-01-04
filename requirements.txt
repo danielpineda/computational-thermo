@@ -1,10 +1,12 @@
 # Requirements for the demo notebooks
 # Useful for MyBinder configuration
-pandas
-numpy
-datascience
-folium
-matplotlib
-nbinteract
-scipy
 jupyter-book
+numpy
+pandas
+matplotlib
+scipy
+cantera
+pint
+sympy
+CoolProp
+pyfluids

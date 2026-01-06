@@ -35,7 +35,7 @@ $$
 E = U + \text{KE} + \text{PE} \;,
 $$
 where $U$ is the total internal energy, 
-$\text{KE} = \frac{1}{2} m V^2$ is the kinetic energy 
+$\text{KE} = \frac{1}{2} m \tilde{V}^2$ is the kinetic energy 
 (based on a bulk velocity $V$ in some frame of reference),
 and $\text{PE} = mgz$, with $m$ being the system mass, $g$ acceleration due to gravity,
 and $z$ the height relative to some baseline.
@@ -47,8 +47,9 @@ Expanding Eq. [](#eq:energy) into [](#eq:first-law-rate) and then integrating:
 $$
 \begin{align}
 \int \left( \dot{Q} - \dot{W} \right) &= \int \left(\frac{dU}{dt} + \frac{d\text{KE}}{dt} + \frac{d\text{PE}}{dt} \right) \\
-Q - W &= \Delta U + \Delta\text{KE} + \Delta\text{PE} \;,
+Q - W &= \Delta E = \Delta U + \Delta\text{KE} + \Delta\text{PE} \;,
 \end{align}
+\label{eq:first-law-closed}
 $$
 
 or, the common expression when kinetic and potential energy changes play no role:
@@ -204,6 +205,10 @@ However, current versions of NASA's chemical equilibrium solver and thermodynami
 actually use a nine-coefficient polynomial parameterization {cite:p}`McBride2002` and 
 as many temperature ranges as needed.
 
+Examples of applying the first law to closed systems:
+- [](./steam-water-equilibrium)
+- [](./air-tank)
+
 
 ## Open system
 
@@ -217,4 +222,103 @@ work being done is pressure-volume work by the flow.
 
 Open system with one inlet and one outlet, showing mass of control volume (CV) and 
 control mass (CM) at times $t$ (left) and $t + \Delta t$ (right).
+$\Delta E_{\text{in}}$ and $\Delta m_{\text{in}}$ cross the control volume boundary
+at the inlet, while $\Delta E_{\text{out}}$ and $\Delta m_{\text{out}}$ cross the 
+control volume boundary at the outlet.
+$T$ and $P$ indicate temperature and pressure at the inlet or outlet, and $\dot{m}$
+indicates the mass flow rate at the inlet or outlet.
 :::
+
+We can apply Equation [](#eq:first-law-closed) to the control mass from time $t$
+to $t + \Delta t$:
+
+$$
+\label{eq:first-law-start}
+W_{\text{in}} = W_{\text{out}} + \Delta E \;.
+$$
+
+The change in energy of the control mass is
+
+$$
+\Delta E = \left(E_{\text{CV}, t + \Delta t} + \Delta E_{\text{out}} \right) - 
+    \left( E_{\text{CV}, t} + \Delta E_{\text{in}} \right) \;,
+$$
+
+where the term on the left represents the energy of the control mass 
+at time $t + \Delta t$ and the term on the right at time $t$.
+The work done to/by the system at the system boundaries is pressure work,
+or the compression and expansion work done by the flow as it changes volume 
+at constant pressure:
+
+$$
+\begin{align}
+W_{\text{in}} &= P_{\text{in}} v_{\text{in}} \Delta m_{\text{in}} \\
+W_{\text{out}} &= P_{\text{out}} v_{\text{out}} \Delta m_{\text{out}} \;,
+\end{align}
+$$
+
+where $v_{\text{in}} \Delta m_{\text{in}}$ represents a decrease in volume and
+$v_{\text{out}} \Delta m_{\text{out}}$ an increase in volume, respectively.
+Incorporating these expressions into Equation [](#eq:first-law-start) gives:
+
+$$
+P_{\text{in}} v_{\text{in}} \Delta m_{\text{in}} = 
+ P_{\text{out}} v_{\text{out}} \Delta m_{\text{out}}
+ + \left(E_{\text{CV}, t + \Delta t} + \Delta E_{\text{out}} \right) - 
+    \left( E_{\text{CV}, t} + \Delta E_{\text{in}} \right) \;,
+$$
+
+where $\Delta E_{\text{in}} = \Delta m_{\text{in}} \left(u_{\text{in}} + \frac{1}{2} \tilde{V}^2_{\text{in}} + gz_{\text{in}} \right)$. Expanding the energy terms leads to:
+
+$$
+\begin{align}
+\Delta m_{\text{in}} \left( u_{\text{in}} + P_{\text{in}} v_{\text{in}} + \frac{1}{2} \tilde{V}^2_{\text{in}} + gz_{\text{in}} \right) &= \Delta m_{\text{out}} \left( u_{\text{out}} + P_{\text{out}} v_{\text{out}} + \frac{1}{2} \tilde{V}^2_{\text{out}} + gz_{\text{out}} \right) \\ 
+&+ \left(E_{\text{CV}, t + \Delta t} - E_{\text{CV}, t} \right) \;.
+\end{align}
+$$
+
+In this lengthy expression, we see that the combination of internal energy, pressure, 
+and specific volume pops up on both sides of the equation. As these are all internal, 
+intensive properties of the flow at a particular state, their combination is also a 
+state function or property, which we define as **enthalpy**:
+
+$$
+\label{eq:enthalpy}
+h \equiv u + P v \;.
+$$
+
+This allows a slight simplification of the full energy balance:
+
+$$
+\label{eq:energy-balance-before-derivative}
+\Delta m_{\text{in}} \left( h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{in}} = 
+\Delta m_{\text{out}} \left( h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{out}} + 
+\left(E_{\text{CV}, t + \Delta t} - E_{\text{CV}, t} \right) \;.
+$$
+
+Now, let's divide Equation [](#eq:energy-balance-before-derivative) by $\Delta t$, 
+and then take the limit as $\Delta t \to 0$:
+
+$$
+\begin{align}
+\lim_{\Delta t\to 0} \left[ \frac{\Delta m_{\text{in}}}{\Delta t} \left( h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{in}} \right] &= \lim_{\Delta t\to 0} \left[ \frac{\Delta m_{\text{out}}}{\Delta t} \left( h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{out}} + \frac{E_{\text{CV}, t + \Delta t} - E_{\text{CV}, t}}{\Delta t} \right] \\
+\therefore \dot{m}_{\text{in}} \left(h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{in}} &=
+\dot{m}_{\text{out}} \left(h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{out}} + 
+\frac{dE_{\text{CV}}}{dt} \;.
+\end{align}
+$$
+
+Or, for a general open system with multiple inlets/outlets, and 
+possible sources of heat transfer and work crossing the
+control volume boundary:
+
+$$
+\sum_{\text{inlets}} \dot{m}_{\text{in}} \left(h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{in}} 
++ \sum \dot{Q} = 
+\sum_{\text{outlets}} \dot{m}_{\text{out}} \left(h + \frac{1}{2}\tilde{V}^2 + gz \right)_{\text{out}} 
++ \sum \dot{W} + \frac{dE}{dt} \;.
+$$
+
+Examples of applying the first law to open systems:
+- [](./hydrogen-storage-tanks)
+- [](./portable-cooling-system)

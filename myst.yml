@@ -6,7 +6,7 @@ project:
     - name: Kyle Niemeyer
       email: kyle.niemeyer@oregonstate.edu
   copyright: '2025'
-  date: '2025'
+  date: '2025-01-05'
   github: kyleniemeyer/computational-thermo
   jupyter: true
   bibliography:

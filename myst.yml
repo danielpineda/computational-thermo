@@ -38,7 +38,7 @@ project:
       - file: content/second-law/heating-water.ipynb
       - file: content/second-law/turbine-efficiency.ipynb
       - file: content/second-law/solar-powered-pump.ipynb
-    - file: content/exergy/exergy.ipynb
+    - file: content/exergy/exergy.md
       children:
       - file: content/exergy/second-law-efficiency.ipynb
     - file: content/properties-pure/properties-pure.ipynb

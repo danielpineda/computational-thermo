@@ -10,7 +10,7 @@ All artwork here is original.
 
 ## Citing
 
-I developed this material as an open educational resource, with the goal of enabling the widest possible use. Creative content is released under the Creative Commons Attribution (CC-BY) License and code under the BSD 3-Clause License (see `LICENSE.txt` and `LICENSE-text.txt` for details).
+Dr. Niemeyer developed this material as an open educational resource, with the goal of enabling the widest possible use. Creative content is released under the Creative Commons Attribution (CC-BY) License and code under the BSD 3-Clause License (see `LICENSE.txt` and `LICENSE-text.txt` for details).
 
 If you reference this material in a scholarly publication, please cite it:
 
@@ -30,7 +30,6 @@ A BibTeX entry for LaTeX users is
 
 ## Contributing
 
-Contributions are welcome! Please see the [contributing guide](https://kyleniemeyer.github.io/computational-thermo/contributing.html) for more information.
 
 The code portions of this material are licensed under the BSD 3-Clause License (described in `LICENSE.txt`) while the non-code portions of the material are licensed under the Creative Commons Attribution License (CC-BY, described in `LICENSE-text.txt`).
 
@@ -38,8 +37,7 @@ The code portions of this material are licensed under the BSD 3-Clause License (
 
 To quickly get started, you can use a few free services to run Jupyter via your browser.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kyleniemeyer/computational-thermo/blob/main/colab-demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/danielpineda/computational-thermo/blob/main/colab-demo.ipynb)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kyleniemeyer/computational-thermo/main?filepath=blob%2Fmain%2Fcontent%2Fintro-solving-problems.ipynb)
 
 Read more in the "Setting up your computing environment" module.
